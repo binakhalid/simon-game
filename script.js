@@ -1,6 +1,6 @@
 (function() {
 
-/* Declare global variables */  
+ 
 var isOn = false;
 var isPlaying = false;
 var isStrict = false;
@@ -22,7 +22,7 @@ var tones = [
   new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'), 
   new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3')];       
 
-// On-Off button handler  
+  
 var toggleOnOff = function() {
   if (isOn) {
      $('#start-button').unbind('click');
@@ -42,8 +42,7 @@ var toggleOnOff = function() {
   isOn = !isOn;
   showScore();
 }
-
-// Start button handler  
+ 
 var toggleStartStop = function() {
   if (isPlaying) {
     disablePads();
@@ -131,7 +130,7 @@ var validateInput = function() {
   return false;
 }
 
-// Set mouse handlers on the color pads to allow user input
+
 var enablePads = function() {
     $('#pad1').on('mousedown', function() {padPressed(1);});
     $('#pad2').on('mousedown', function() {padPressed(2);});
@@ -143,7 +142,6 @@ var enablePads = function() {
     $('#pad4').on('mouseup', function() {padReleased(4);});
 }
 
-// Remove mouse handlers on the color pads to disable user input
 var disablePads = function() {
     $('#pad1').unbind('mousedown');
     $('#pad2').unbind('mousedown');
@@ -155,7 +153,7 @@ var disablePads = function() {
     $('#pad4').unbind('mouseup');
 }
 
-// Highlight all 4 padds to indicate an error
+
 var reportError = function() {
   disablePads();
   padPressed(1);
@@ -168,7 +166,7 @@ var reportError = function() {
   setTimeout(padReleased, 200, 4);
 }
 
-// Display the count (or whatever) in the display 
+
 var showScore = function() {
   $('#display').html(displayValue);
 }
@@ -181,7 +179,7 @@ var createSequence = function() {
   }
 }
 
-// Play the right sequence for the user.
+
 var playSequence = function() {
   if (!isPlaying) return;
   if (turn === 5) interval = 1200;
@@ -202,7 +200,7 @@ var playSequence = function() {
   }
 }
 
-// Initialize
+
 $(document).ready(function() {
    $('#onoff').click(toggleOnOff);
 });
