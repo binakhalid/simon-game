@@ -1,5 +1,5 @@
 ﻿# simon-game
- # User Story
+ # User Story (freecodecamp)
 I am presented with a random series of button presses.
 
 Each time I input a series of button presses correctly, I see the same series of button presses but with an additional step.
